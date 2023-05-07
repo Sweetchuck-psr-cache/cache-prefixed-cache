@@ -1,0 +1,82 @@
+{
+    "name": "cache/prefixed-cache",
+    "description": "A decorator that makes your cache support prefix",
+    "license": "MIT",
+    "type": "library",
+    "keywords": [
+        "cache",
+        "psr-6",
+        "prefix"
+    ],
+    "authors": [
+        {
+            "name": "Tobias Nyholm",
+            "email": "tobias.nyholm@gmail.com",
+            "homepage": "https://github.com/nyholm"
+        }
+    ],
+    "homepage": "https://www.php-cache.com/en/latest/",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
+    "repositories": {
+        "cache/adapter-common": {
+            "type": "github",
+            "url": "https://github.com/Sweetchuck-psr-cache/cache-adapter-common.git"
+        },
+        "cache/hierarchical-cache": {
+            "type": "github",
+            "url": "https://github.com/Sweetchuck-psr-cache/cache-hierarchical-cache.git"
+        },
+        "cache/integration-tests": {
+            "type": "github",
+            "url": "https://github.com/Sweetchuck-psr-cache/cache-integration-tests.git"
+        },
+        "cache/tag-interop": {
+            "type": "github",
+            "url": "https://github.com/Sweetchuck-psr-cache/cache-tag-interop.git"
+        },
+        "tedivm/stash": {
+            "type": "github",
+            "url": "https://github.com/Sweetchuck/tedivm-stash.git"
+        }
+    },
+    "require": {
+        "php": ">=8.1",
+        "cache/hierarchical-cache": "3.x-dev",
+        "psr/cache": "^3.0",
+        "psr/simple-cache": "^3.0"
+    },
+    "require-dev": {
+        "cache/integration-tests": "3.x-dev",
+        "phpunit/phpunit": "^10.0",
+        "squizlabs/php_codesniffer": "^3.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cache\\Prefixed\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Cache\\Prefixed\\Tests\\": "tests/src/"
+        }
+    },
+    "scripts": {
+        "lint": [
+            "@lint:phpcs"
+        ],
+        "lint:phpcs": "phpcs",
+        "test:all": "phpunit",
+        "test": [
+            "@test:acceptance"
+        ],
+        "test:acceptance": "phpunit --testsuite='Acceptance'"
+    }
+}

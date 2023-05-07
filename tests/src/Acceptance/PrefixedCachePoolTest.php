@@ -12,7 +12,7 @@ declare(strict_types = 1);
  * with this source code in the file LICENSE.
  */
 
-namespace Cache\Prefixed\Tests;
+namespace Cache\Prefixed\Tests\Acceptance;
 
 use Cache\Prefixed\PrefixedCachePool;
 use PHPUnit\Framework\TestCase;
