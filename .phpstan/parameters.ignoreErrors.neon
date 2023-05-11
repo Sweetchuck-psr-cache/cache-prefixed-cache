@@ -1,0 +1,6 @@
+parameters:
+    ignoreErrors:
+        -
+            message: "#^Parameter \\#1 \\$array of function array_keys expects array, iterable\\<string, Psr\\\\Cache\\\\CacheItemInterface\\> given\\.$#"
+            count: 1
+            path: ../tests/src/Acceptance/PrefixedCachePoolTest.php
